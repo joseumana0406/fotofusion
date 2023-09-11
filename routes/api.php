@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\PersonalController;
+use App\Http\Controllers\MostrarCitasController;
 
 
 
@@ -32,3 +33,4 @@ Route::post('clientes/update/{cedulaCliente}', [ClienteController::class, 'updat
 
 Route::get('personal/login', [PersonalController::class, 'loginForm'])->name('personal.loginForm');
 Route::post('personal/login', [PersonalController::class, 'login'])->name('personal.login');
+Route::get('/citas', [MostrarCitasController::class, 'mostrarCitas']);

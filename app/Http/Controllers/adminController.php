@@ -34,6 +34,6 @@ class AdminController extends Controller
     public function logout()
     {
         // Aquí puedes agregar lógica para cerrar sesión si es necesario
-        return view('login');
+        return view('admin');
     }
 }

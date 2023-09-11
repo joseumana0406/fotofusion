@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MostrarCitasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,7 +42,6 @@ Route::get('/personal', function () {
 })->name('personal');
 
 Route::get('/login', function () {
-    return view('login');
-})->name('login');
-
+    return view('admin');
+})->name('admin');
 
