@@ -18,10 +18,28 @@ Route::get('/', function () {
 });
 
 
-Route::get('clientes/create', function () {
-    return view('create');
-});
 
-Route::get('personal/login', function () {
+Route::get('/admin', function () {
+    return view('admin');
+})->name('admin');
+
+
+Route::get('/registro', function () {
+    return view('create');
+})->name('registro');
+
+Route::get('/citas', function () {
+    return view('citas');
+})->name('citas');
+
+Route::get('/clientes', function () {
+    return view('clientes');
+})->name('clientes');
+
+Route::get('/personal', function () {
+    return view('personal');
+})->name('personal');
+
+Route::get('/login', function () {
     return view('login');
-});
+})->name('login');

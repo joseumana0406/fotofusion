@@ -24,7 +24,7 @@ class PersonalController extends Controller
             // Aquí puedes establecer cualquier lógica de sesión, por ejemplo:
             // $request->session()->put('personal_id', $personal->id);
 
-            return response()->json(['message' => 'Login exitoso'], 200);
+            return redirect()->route('admin');
         } else {
             return response()->json(['message' => 'Credenciales incorrectas'], 401);
         }
