@@ -21,3 +21,7 @@ Route::get('/', function () {
 Route::get('clientes/create', function () {
     return view('create');
 });
+
+Route::get('personal/login', function () {
+    return view('login');
+});

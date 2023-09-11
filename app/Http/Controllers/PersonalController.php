@@ -1,64 +1,32 @@
 <?php
 
-namespace App\Http\Controllers;
 
+namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use App\Models\Personal;
 
 class PersonalController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function loginForm()
     {
-        //
+        return view('login');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function login(Request $request)
     {
-        //
-    }
+        $credentials = $request->only('cedulaPersonal', 'contraseña');
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        $personal = Personal::where('cedulaPersonal', $credentials['cedulaPersonal'])
+                            ->where('contraseña', $credentials['contraseña'])
+                            ->first();
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
+        if ($personal) {
+            // Aquí puedes establecer cualquier lógica de sesión, por ejemplo:
+            // $request->session()->put('personal_id', $personal->id);
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+            return response()->json(['message' => 'Login exitoso'], 200);
+        } else {
+            return response()->json(['message' => 'Credenciales incorrectas'], 401);
+        }
     }
 }

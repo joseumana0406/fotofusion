@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\PersonalController;
 
 
 
@@ -29,3 +30,5 @@ Route::post('clientes', [ClienteController::class, 'store']);
 Route::post('clientes/update/{cedulaCliente}', [ClienteController::class, 'update']);
 //Route::delete('clientes/{cedulaCliente}', [ClienteController::class, 'destroy']); //aun no se utilizara
 
+Route::get('personal/login', [PersonalController::class, 'loginForm'])->name('personal.loginForm');
+Route::post('personal/login', [PersonalController::class, 'login'])->name('personal.login');
