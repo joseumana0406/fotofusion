@@ -15,7 +15,7 @@
         <a href="{{ route('citas') }}">Citas</a>
         <a href="{{ route('clientes') }}">Clientes</a>
         <a href="{{ route('personal') }}">Personal</a>
-        <a href="{{ route('admin') }}">Cerrar sesión</a>
+        <a href="{{ route('welcome') }}">Cerrar sesión</a>
     </div>
       
       </body>
