@@ -6,3 +6,6 @@
           <a href="{{ route('personal') }}">Personal</a>
           <a href="{{ route('login') }}">Cerrar sesión</a>
       </div>
+
+
+      
