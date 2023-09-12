@@ -19,7 +19,7 @@ Route::post('clientes/update/{cedulaCliente}', [ClienteController::class, 'updat
 Route::get('personal/login', [PersonalController::class, 'loginForm'])->name('personal.loginForm');
 Route::post('personal/login', [PersonalController::class, 'login'])->name('personal.login');
 Route::get('/citas', [ContratoController::class, 'mostrarCitas']);
-Route::get('/contratos', [ContratoController::class, 'mostrarContrato']);
-Route::post('/registrarc', [ContratoController::class, 'registrarContrato']);
+Route::get('/contratos', [ContratoController::class, 'mostrarContrato']);  //mostrar contratos
+Route::post('/registrarc', [ContratoController::class, 'registrarContrato']);  //registrar contratos
 
 
