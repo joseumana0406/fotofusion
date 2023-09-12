@@ -25,9 +25,9 @@ Route::get('/registro', function () {
 })->name('registro');
 
 
-Route::get('/clientes', function () {
-    return view('clientes');
-})->name('clientes');
+Route::get('/registroContratos', function () {
+    return view('registroContratos');
+})->name('registroContratos');
 
 Route::get('/personal', function () {
     return view('personal');
@@ -38,3 +38,5 @@ Route::get('/login', function () {
 })->name('admin');
 
 Route::get('contratos', [ContratoController::class, 'mostrarInformacion'])->name('contratos');
+
+

@@ -7,29 +7,38 @@ use App\Models\Personal;
 use App\Models\Contrato;
 use Illuminate\Http\Request;
 use App\Http\Resources\ContratoResource;
+use Illuminate\Support\Facades\Validator;
+
 
 class ContratoController extends Controller
 {
-
+    //funcion para registrar contrato
     public function registrarContrato(Request $request)
     {
         $validator = Validator::make($request->all(), [
         'numContrato' => 'required|unique:contrato', 
-        'cedulaCliente' => 'required|unique:cliente', 
-        'cedulaPersonal' => 'required|unique:personal', 
+        'cedulaCliente' => 'required', 
+        'cedulaPersonal' => 'required', 
         'costo' => 'required',
         'fechaEvento' => 'required',
         'lugarEvento' => 'required',
 
         ]);
 
+
+
+
+    
         if ($validator->fails()) {
             return response()->json(['errors' => $validator->errors()], 400);
         }
 
-        $cliente = Cliente::create($request->all());
-
-        return response()->json(['message' => 'Contrato creado con éxito'], 201);
+        try {
+            $contrato = Contrato::create($request->all()); 
+            return response()->json(['message' => 'Contrato creado con éxito'], 201);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Error al crear el contrato', 'error' => $e->getMessage()], 500);
+        }
     }
 
 

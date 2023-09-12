@@ -20,6 +20,6 @@ Route::get('personal/login', [PersonalController::class, 'loginForm'])->name('pe
 Route::post('personal/login', [PersonalController::class, 'login'])->name('personal.login');
 Route::get('/citas', [ContratoController::class, 'mostrarCitas']);
 Route::get('/contratos', [ContratoController::class, 'mostrarContrato']);
-Route::get('/registrarc', [ContratoController::class, 'registrarContrato']);
+Route::post('/registrarc', [ContratoController::class, 'registrarContrato']);
 
 
