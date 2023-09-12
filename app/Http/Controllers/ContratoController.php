@@ -35,6 +35,7 @@ class ContratoController extends Controller
 {
     $contratos = Contrato::with(['cliente', 'personal'])->get();
     $contratosResource = ContratoResource::collection($contratos);
+    //dd($contratos); 
     return view('contratos', ['contratos' => $contratosResource]);
 }
 

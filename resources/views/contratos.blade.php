@@ -31,16 +31,16 @@
 
     @foreach($contratos as $contrato)
         <tr>
-            <td>{{ $contrato['nombre_cliente'] }}</td>
-            <td>{{ $contrato['apellido_cliente'] }}</td>
-            <td>{{ $contrato['cedula_cliente'] }}</td>
-            <td>{{ $contrato['nombre_personal'] }}</td>
-            <td>{{ $contrato['apellido_personal'] }}</td>
-            <td>{{ $contrato['cedula_personal'] }}</td>
-            <td>{{ $contrato['num_contrato'] }}</td>
+            <td>{{ $contrato['nombreCliente'] }}</td>
+            <td>{{ $contrato['apellidoCliente'] }}</td>
+            <td>{{ $contrato['cedulaCliente'] }}</td>
+            <td>{{ $contrato['nombrePersonal'] }}</td>
+            <td>{{ $contrato['apellidoPersonal'] }}</td>
+            <td>{{ $contrato['cedulaPersonal'] }}</td>
+            <td>{{ $contrato['numContrato'] }}</td>
             <td>{{ $contrato['costo'] }}</td>
-            <td>{{ $contrato['fecha_evento'] }}</td>
-            <td>{{ $contrato['lugar_evento'] }}</td>
+            <td>{{ $contrato['fechaEvento'] }}</td>
+            <td>{{ $contrato['lugarEvento'] }}</td>
         </tr>
     @endforeach
 

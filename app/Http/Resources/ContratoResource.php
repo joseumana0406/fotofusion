@@ -1,6 +1,10 @@
 <?php
 
 namespace App\Http\Resources;
+
+use App\Models\Cliente;
+use App\Models\Personal;
+use App\Models\Contrato;
 use App\Http\Controllers\ContratoController;
 
 
@@ -11,16 +15,16 @@ class ContratoResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'nombre_cliente' => $this->cliente->nombreCliente,
-            'apellido_cliente' => $this->cliente->apellidoCliente,
-            'cedula_cliente' => $this->cliente->cedulaCliente,
-            'nombre_personal' => $this->personal->nombrePersonal,
-            'apellido_personal' => $this->personal->apellidoPersonal,
-            'cedula_personal' => $this->personal->cedulaPersonal,
-            'num_contrato' => $this->numContrato,
+            'nombreCliente' => $this->cliente->nombreCliente,
+            'apellidoCliente' => $this->cliente->apellidoCliente,
+            'cedulaCliente' => $this->cliente->cedulaCliente,
+            'nombrePersonal' => $this->personal->nombrePersonal,
+            'apellidoPersonal' => $this->personal->apellidoPersonal,
+            'cedulaPersonal' => $this->personal->cedulaPersonal,
+            'numContrato' => $this->numContrato,
             'costo' => $this->costo,
-            'fecha_evento' => $this->fechaEvento,
-            'lugar_evento' => $this->lugarEvento,
+            'fechaEvento' => $this->fechaEvento,
+            'lugarEvento' => $this->lugarEvento,
         ];
     }
 }
