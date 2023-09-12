@@ -2,63 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cliente;
+use App\Models\Personal;
+use App\Models\Contrato;
 use Illuminate\Http\Request;
 
 class ContratoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function mostrarContrato()
     {
-        //
-    }
+        $contratos = Contrato::with(['cliente', 'personal'])->get();
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
+        foreach($contratos as $contrato) {
+            echo 'Nombre Cliente: ' . $contrato->cliente->nombreCliente . '<br>';
+            echo 'Apellido Cliente: ' . $contrato->cliente->apellidoCliente . '<br>';
+            echo 'Cedula Cliente: ' . $contrato->cliente->cedulaCliente . '<br>';
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+            echo 'Nombre Personal: ' . $contrato->personal->nombrePersonal . '<br>';
+            echo 'Apellido Personal: ' . $contrato->personal->apellidoPersonal . '<br>';
+            echo 'Cedula Personal: ' . $contrato->personal->cedulaPersonal . '<br>';
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+            echo 'Número Contrato: ' . $contrato->numContrato . '<br>';
+            echo 'Costo: ' . $contrato->costo . '<br>';
+            echo 'Fecha Evento: ' . $contrato->fechaEvento . '<br>';
+            echo 'Lugar Evento: ' . $contrato->lugarEvento . '<br>';
+            echo '----------------------------------------<br>';
+        }
     }
 }
