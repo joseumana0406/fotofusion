@@ -15,19 +15,19 @@ class ContratoController extends Controller
         $contratos = Contrato::with(['cliente', 'personal'])->get();
 
         foreach($contratos as $contrato) {
-            echo 'Nombre Cliente: ' . $contrato->cliente->nombreCliente . '<br>';
-            echo 'Apellido Cliente: ' . $contrato->cliente->apellidoCliente . '<br>';
-            echo 'Cedula Cliente: ' . $contrato->cliente->cedulaCliente . '<br>';
+            echo 'Nombre Cliente: ' . $contrato->cliente->nombreCliente ."\n" ;
+            echo 'Apellido Cliente: ' . $contrato->cliente->apellidoCliente ."\n";
+            echo 'Cedula Cliente: ' . $contrato->cliente->cedulaCliente . "\n\n";
 
-            echo 'Nombre Personal: ' . $contrato->personal->nombrePersonal . '<br>';
-            echo 'Apellido Personal: ' . $contrato->personal->apellidoPersonal . '<br>';
-            echo 'Cedula Personal: ' . $contrato->personal->cedulaPersonal . '<br>';
+            echo 'Nombre Personal: ' . $contrato->personal->nombrePersonal . "\n";
+            echo 'Apellido Personal: ' . $contrato->personal->apellidoPersonal . "\n";
+            echo 'Cedula Personal: ' . $contrato->personal->cedulaPersonal . "\n\n";
 
-            echo 'Número Contrato: ' . $contrato->numContrato . '<br>';
-            echo 'Costo: ' . $contrato->costo . '<br>';
-            echo 'Fecha Evento: ' . $contrato->fechaEvento . '<br>';
-            echo 'Lugar Evento: ' . $contrato->lugarEvento . '<br>';
-            echo '----------------------------------------<br>';
+            echo 'Número Contrato: ' . $contrato->numContrato . "\n" ;
+            echo 'Costo: ' . $contrato->costo . "\n";
+            echo '</br>'.'Fecha Evento: ' . $contrato->fechaEvento . "\n";
+            echo 'Lugar Evento: ' . $contrato->lugarEvento ."\n";
+            echo '----------------------------------------'. "\n";
         }
     }
 
