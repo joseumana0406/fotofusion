@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MostrarCitasController;
+use App\Http\Controllers\ContratoController;
+
 
 
 
@@ -23,9 +24,6 @@ Route::get('/registro', function () {
     return view('create');
 })->name('registro');
 
-Route::get('/citas', function () {
-    return view('citas');
-})->name('citas');
 
 Route::get('/clientes', function () {
     return view('clientes');
@@ -39,4 +37,4 @@ Route::get('/login', function () {
     return view('admin');
 })->name('admin');
 
-
+Route::get('contratos', [ContratoController::class, 'mostrarInformacion'])->name('contratos');

@@ -6,6 +6,7 @@ use App\Models\Cliente;
 use App\Models\Personal;
 use App\Models\Contrato;
 use Illuminate\Http\Request;
+use App\Http\Resources\ContratoResource;
 
 class ContratoController extends Controller
 {
@@ -29,4 +30,13 @@ class ContratoController extends Controller
             echo '----------------------------------------<br>';
         }
     }
+
+    public function mostrarInformacion()
+{
+    $contratos = Contrato::with(['cliente', 'personal'])->get();
+    $contratosResource = ContratoResource::collection($contratos);
+    return view('contratos', ['contratos' => $contratosResource]);
 }
+
+}
+
