@@ -7,7 +7,7 @@
 
     <div class="top-bar">
         <a href="{{ route('admin') }}">Inicio</a>
-        <a href="{{ route('registro') }}">Registro</a>
+        <a href="{{ route('registro') }}">Registro Clientes</a>
         <a href="{{ route('contratos') }}">Contratos</a>
         <a href="{{ route('clientes') }}">Clientes</a>
         <a href="{{ route('personal') }}">Personal</a>
@@ -30,20 +30,21 @@
     </tr>
 
     
-@foreach($contratos as $contrato)
-<tr>
-    <td>{{ $contrato->nombreCliente }}</td>
-    <td>{{ $contrato->apellidoCliente }}</td>
-    <td>{{ $contrato->cedulaCliente }}</td>
-    <td>{{ $contrato->nombrePersonal }}</td>
-    <td>{{ $contrato->apellidoPersonal }}</td>
-    <td>{{ $contrato->cedulaPersonal }}</td>
-    <td>{{ $contrato->numContrato }}</td>
-    <td>{{ $contrato->costo }}</td>
-    <td>{{ $contrato->fechaEvento }}</td>
-    <td>{{ $contrato->lugarEvento }}</td>
-</tr>
+    @foreach($contratos as $contrato)
+    <tr>
+        <td>{{ $contrato['nombreCliente'] }}</td>
+        <td>{{ $contrato['apellidoCliente'] }}</td>
+        <td>{{ $contrato['cedulaCliente'] }}</td>
+        <td>{{ $contrato['nombrePersonal'] }}</td>
+        <td>{{ $contrato['apellidoPersonal'] }}</td>
+        <td>{{ $contrato['cedulaPersonal'] }}</td>
+        <td>{{ $contrato['numContrato'] }}</td>
+        <td>{{ $contrato['costo'] }}</td>
+        <td>{{ $contrato['fechaEvento'] }}</td>
+        <td>{{ $contrato['lugarEvento'] }}</td>
+    </tr>
 @endforeach
+
 
 
 </table>
