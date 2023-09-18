@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  mySQL:
+    image: mysql
+    restart: always
+    container_name: fotofusion
+    environment:
+      - MYSQL_DATABASE=fotofusion
+      - MYSQL_ROOT_PASSWORD=root
+    ports: 
+      - '3306:3306'
+    volumes:
+      - ./fotofusion.sql:/docker-entrypoint-initdb.d/fotofusion.sql

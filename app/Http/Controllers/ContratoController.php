@@ -63,7 +63,7 @@ class ContratoController extends Controller
         // Mostrar detalles específicos del contrato
         echo 'Número Contrato: ' . $contrato->numContrato . "\n" ;
         echo 'Costo: ' . $contrato->costo . "\n";
-        echo '</br>'.'Fecha Evento: ' . $contrato->fechaEvento . "\n";
+        echo 'Fecha Evento: ' . $contrato->fechaEvento . "\n";
         echo 'Lugar Evento: ' . $contrato->lugarEvento ."\n";
         echo '----------------------------------------'. "\n";
     }
@@ -85,6 +85,8 @@ class ContratoController extends Controller
                 'apellidoPersonal' => $contrato->personal->apellidoPersonal,
                 'cedulaPersonal' => $contrato->personal->cedulaPersonal,
                 'numContrato' => $contrato->numContrato,
+                'idServicio' => $contrato->numContrato,
+                'tipoServicio' => $contrato->numContrato,
                 'costo' => $contrato->costo,
                 'fechaEvento' => $contrato->fechaEvento,
                 'lugarEvento' => $contrato->lugarEvento,

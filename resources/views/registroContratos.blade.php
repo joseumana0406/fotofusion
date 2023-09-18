@@ -35,6 +35,9 @@
     
         <label for="lugarEvento">Lugar del Evento:</label>
         <input type="text" id="lugarEvento" name="lugarEvento"><br>
+
+        <label for="tipoServicio">Tipo de Servicio:</label>
+        <input type="text" id="tipoServicio" name="tipoServicio"><br>
     
         <button type="submit">Registrar</button>
     </form>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-09-2023 a las 18:54:13
+-- Tiempo de generación: 15-09-2023 a las 16:22:52
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.1.17
 
@@ -43,6 +43,7 @@ INSERT INTO `cliente` (`cedulaCliente`, `nombreCliente`, `apellidoCliente`, `ema
 ('1000', 'José', 'Umaña', '', ''),
 ('1001', 'Jamel', 'Navarro', '', ''),
 ('1002', 'Juan', 'Basmeson', '', ''),
+('1212121212', 'jose', 'prueba', 'tuna@gmail.com', 'palepapal'),
 ('5-555-555', 'jose', 'prueba', 'estaesuna@gmail.com', 'palepapal'),
 ('8-888-111', 'umaña', 'Navarro', 'prueba2.navarro@example.com', '123 Calle Principal'),
 ('8-888-222', 'umaña', 'Navarro', 'prueba.navarro@example.com', '123 Calle Principal'),
@@ -81,9 +82,13 @@ CREATE TABLE `contrato` (
 --
 
 INSERT INTO `contrato` (`numContrato`, `cedulaCliente`, `cedulaPersonal`, `costo`, `fechaEvento`, `lugarEvento`) VALUES
+('1321321', '1000', '3000', 100, '2023-09-29', 'cinta costera'),
 ('c001', '1000', '3000', 50, '2020-06-24', 'Ciudad de Panamá, Cinta Costera'),
+('c0010', '1000', '3000', 99, '2020-06-24', '123 Calle Principal'),
 ('c002', '1001', '3002', 85.2, '2020-03-25', 'Panamá Oeste, Westland Mall'),
-('c003', '1002', '3001', 300, '2020-08-10', 'Panamá Oeste, Burunga');
+('c003', '1002', '3001', 300, '2020-08-10', 'Panamá Oeste, Burunga'),
+('c004', '1000', '3001', 55, '2023-09-15', 'asdasdasdasdasd'),
+('c005', '1000', '3001', 55, '2023-09-15', 'asdasdasdasdasd');
 
 -- --------------------------------------------------------
 

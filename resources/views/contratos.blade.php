@@ -40,6 +40,8 @@
                 <th>Costo</th>
                 <th>Fecha Evento</th>
                 <th>Lugar Evento</th>
+                <th>Clave del servicio</th>
+                <th>Tipo de Servicio</th>
             </tr>
         </thead>
         <tbody>
@@ -55,6 +57,8 @@
                 <td>{{ $contrato['costo'] }}</td>
                 <td>{{ $contrato['fechaEvento'] }}</td>
                 <td>{{ $contrato['lugarEvento'] }}</td>
+                <td>{{ $contrato['idServicio'] }}</td>
+                <td>{{ $contrato['tipoServicio'] }}</td>
             </tr>
             @endforeach
             
