@@ -1,5 +1,25 @@
 //comando para correr docker-compose.yml 
 docker-compose up
 
+//usuario y contraseña base de datos
+nombre de db= fotofusion
+usuario=root
+Contraseña=root
 
+
+//crear imagen apache
+docker build -t my-apache2 .
+
+///correr imagen apache
+docker run -dit --name my-running-app -p 8080:80 my-apache2
+
+
+
+POR COMANDOS
+//crear imagen docker apache puerto 8080
+docker run -dit --name myapache -p 8080:80 httpd
+//ahora especificando lo que quiero copiar dentro de htdocs Y PUERTO 3000
+docker run -dit --name myapacheaplicacion -p 3000:80 -v ${PWD}:/usr/local/apache2/htdocs/ httpd
+//se crea una carpeta llamada fotofusion antes de pasar lo datos 
+docker run -dit --name myapacheaplicacion -p 3000:80 -v ${PWD}/fotofusion:/usr/local/apache2/htdocs/fotofusion httpd
 
